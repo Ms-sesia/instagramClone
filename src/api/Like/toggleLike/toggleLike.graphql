@@ -1,0 +1,4 @@
+# like unlike toggle schema
+type Mutation {
+  toggleLike( postId: String!): Boolean!  # postId는 post의 Id값.
+}
