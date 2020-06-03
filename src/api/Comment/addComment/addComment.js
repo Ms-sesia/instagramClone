@@ -1,3 +1,4 @@
+// comment 작성시 text, postId, user를 받아서 DB에 입력
 import { isAuthenticated } from "../../../middlewares"
 import { prisma } from "../../../../generated/prisma-client";
 

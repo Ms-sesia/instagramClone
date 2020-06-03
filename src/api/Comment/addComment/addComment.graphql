@@ -1,3 +1,4 @@
+# 댓글 다는 mutation
 type Mutation{
   addComment(text: String!, postId: String!): Comment!
 }

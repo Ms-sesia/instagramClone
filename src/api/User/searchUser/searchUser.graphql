@@ -1,0 +1,4 @@
+# 정의는 User이지만 User'들' 이기 때문에 배열로 리턴
+type Query {
+  searchUser(term: String!): [User!]!
+}

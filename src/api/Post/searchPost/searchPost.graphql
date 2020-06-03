@@ -1,0 +1,4 @@
+# 정의는 Post이지만 Post'들'이기때문에 배열로 리턴
+type Query{
+  searchPost(term: String!): [Post!]!
+}
