@@ -26,6 +26,7 @@ export default {
         const existingLike = await prisma.$exists.like(filterOptions);
         if (existingLike) { //  post에 like가 있으면 삭제
           await prisma.deleteManyLikes(filterOptions);
+          return true;
         } else { // post에 like가 없을 때 생성
           await prisma.createLike({
             user: { //  like를 한 user연결
@@ -39,8 +40,8 @@ export default {
               }
             }
           })
+          return false;
         }
-        return true;
       } catch {
         return false;
       }

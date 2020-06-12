@@ -8,20 +8,20 @@ export const COMMENT_FRAGMENT= `
     }
   }
 `
-export const USER_FRAGMENT = `
-  fragment UserParts on User{
-    id
-    username
-    email
-    firstName
-    lastName
-    posts{
-      id
-      caption
-    }
-    following{
-      id
-      username
-    }
-  }
-  `;
+// export const USER_FRAGMENT = `
+//   fragment UserParts on User{
+//     id
+//     username
+//     email
+//     firstName
+//     lastName
+//     posts{
+//       id
+//       caption
+//     }
+//     following{
+//       id
+//       username
+//     }
+//   }
+//   `;
