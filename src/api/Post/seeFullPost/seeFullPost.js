@@ -6,26 +6,27 @@ export default {
     seeFullPost: async (_, args) => {
       const { id } = args;
       const post = await prisma.post({ id });
-      console.log(post);
-      const comments = await prisma.post({
-          id
+      const comments = await prisma
+        .post({
+          id,
         })
         .comments()
         .$fragment(COMMENT_FRAGMENT);
-      const likeCount = await prisma.likesConnection({
+      const likeCount = await prisma
+        .likesConnection({
           where: {
             post: {
-              id
-            }
-          }
+              id,
+            },
+          },
         })
         .aggregate()
         .count();
       return {
         post,
         comments,
-        likeCount
-      }
-    }
-  }
-}
+        likeCount,
+      };
+    },
+  },
+};

@@ -2,15 +2,16 @@ import { prisma } from "../../../../generated/prisma-client";
 
 export default {
   Query: {
-    me: async (_, __, { request, isAuthenticated }) => {  //_와 __는 다르다
+    me: async (_, __, { request, isAuthenticated }) => {
+      //_와 __는 다르다
       isAuthenticated(request);
       const { user } = request;
       const userProfile = await prisma.user({ id: user.id });
-      const posts = await prisma.user({ id: user.id}).posts();
+      const posts = await prisma.user({ id: user.id }).posts();
       return {
-        user: userProfile, 
-        posts
+        user: userProfile,
+        posts,
       };
-    } 
-  }
+    },
+  },
 };
